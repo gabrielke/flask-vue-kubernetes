@@ -1,0 +1,14 @@
+stages:
+- name: Build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: example/flask1:v1
+      registry: 127.0.0.1:34024
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+timeout: 60
+notification: {}
