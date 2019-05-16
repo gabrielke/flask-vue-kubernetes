@@ -11,4 +11,9 @@ stages:
   - applyYamlConfig:
       path: ./deployment.yaml
 timeout: 60
-notification: {}
+notification:
+  recipients:
+  - recipient: akos.gabriel@gmail.com
+    notifier: c-mf4nx:n-5jjgc
+  condition:
+  - Failed
